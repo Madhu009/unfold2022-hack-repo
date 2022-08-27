@@ -1,0 +1,25 @@
+{
+  "name": "#1 MetaMady.eth",
+  "description": "#1",
+  "image": "https://unfold2022hackers.club/metadata/assets/1.jpg",
+  "dna": "10cc4fd34bd927d72bb10861a355dd9027998077",
+  "attributes": [
+    {
+      "Name": "Name",
+      "value": "MetaMady.eth"
+    },
+    {
+      "trait_type": "Description",
+      "value": "Hi, I am one of the hackers here at the unfold2022, Nice to meet you bro.."
+    },
+    {
+      "trait_type": "Twitter",
+      "value": "@MetaMady_eth"
+    },
+    {
+      "trait_type": "Github",
+      "value": "@madhu009"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

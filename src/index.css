@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: 'Fast Hand';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Fast Hand',
+    monospace;
+}
+
+.Toastify__toast-body { font-family: 'Electrolize'; }
