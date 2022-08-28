@@ -14,8 +14,12 @@ import { S3Client, S3 } from "@aws-sdk/client-s3";
 
 import "./App.css";
 import groupPhoto from "./assets/header.png";
+import footer from "./assets/footer.png";
 import Select from "react-select";
 import animatedGif from "./assets/upload.png";
+import twitterLogo from "./logos/tw.png";
+import os from "./logos/Os.png";
+import ETH from "./logos/ETH.png";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -65,12 +69,12 @@ function App() {
     var fileExt = file.name.split(".")[1];
     setFile(URL.createObjectURL(file));
 
-    if (fileExt != 'jpg'){
-      alert ("Only .jpg allowed at this time");
+    if (fileExt != "jpg") {
+      alert("Only .jpg allowed at this time");
       return;
     }
 
-    var currentToken = parseInt(currentSupply) +1;
+    var currentToken = parseInt(currentSupply) + 1;
 
     var metadata = {
       name: currentToken.toString(),
@@ -87,7 +91,6 @@ function App() {
       ContentType: "application/json",
     };
 
-    
     const creds = {
       accessKeyId: "AKIARP2IDETI4LFGDIWH",
       secretAccessKey: "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",
@@ -109,7 +112,11 @@ function App() {
     }
 
     // upload image
-    const target1 = { Bucket: "unfold2022-website", Key: "metadata/assets/"+currentToken.toString()+".jpg", Body: file };
+    const target1 = {
+      Bucket: "unfold2022-website",
+      Key: "metadata/assets/" + currentToken.toString() + ".jpg",
+      Body: file,
+    };
 
     try {
       const parallelUploads3 = new Upload({
@@ -124,7 +131,6 @@ function App() {
     } catch (e) {
       console.log(e);
     }
-
   };
 
   const getTotalSupply = async () => {
@@ -397,7 +403,6 @@ function App() {
             1 Free Mint per wallet <br></br>
           </p>
           <br></br>
-          
 
           <br></br>
 
@@ -444,6 +449,100 @@ function App() {
           )}
         </div>
       </div>
+      <div>
+        <h1 style={{ fontFamily: "rs", color: "white" }}>Demo</h1>
+      </div>
+      <div className="video-responsive">
+        <iframe
+          width="853"
+          height="480"
+          src={`https://www.youtube.com/embed/r6Xon4ZYJEQ`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Embedded youtube"
+        />
+      </div>
+
+      <div>
+        <img
+          src={footer}
+          style={{
+            width: "100%",
+            height: "100%",
+            resizeMode: "contain",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <a href="https://twitter.com/metamady_eth" target="_blank">
+            <img
+              src={twitterLogo}
+              alt="loading..."
+              style={{
+                height: 70,
+                width: 70,
+              }}
+            />
+          </a>
+          <a
+            href="https://opensea.io/collection/unfold-2022-hackers-club"
+            target="_blank"
+          >
+            <img
+              src={os}
+              alt="loading..."
+              style={{
+                height: 70,
+                width: 70,
+              }}
+            />
+          </a>
+
+          <a
+            href="https://polygonscan.com/address/0xfbd664fc889f41e3f5065d76a855d92a25efa3fc"
+            target="_blank"
+          >
+            <img
+              src={ETH}
+              alt="loading..."
+              style={{
+                marginLeft: 15,
+                height: 45,
+                width: 45,
+              }}
+            />
+          </a>
+        </div>
+        <h1
+          style={{
+            fontFamily: "rs",
+            color: "white",
+            fontSize: 30,
+            marginBottom: 50,
+          }}
+        >
+          @Unfold2022HackersClub
+        </h1>
+      </div>
+
+      <div></div>
 
       <div></div>
     </div>
